@@ -1,0 +1,111 @@
+body {
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+    -webkit-print-color-adjust: exact;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.tate {
+    -webkit-writing-mode: vertical-rl;
+    -moz-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    -ms-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    text-align: left;
+    display: inline-block;
+}
+
+/* 言葉　*/
+#kotoba {
+    font-family: "Hannotate TC", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 2em;
+        background-image: url('./tsukimi_jugoya.png') !important;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: rgba(255 255 255 / 70%) !important;
+        background-blend-mode: overlay;
+    .box {
+        text-align: center;
+        padding: 0.6em;
+    }
+
+    h1 {
+        font-size: larger;
+        text-align: center;
+    }
+    .ss {
+        font-size: small;
+        text-align: center;
+    }
+}
+
+/* 教え */
+#oshie {
+    font-family: "Hannotate TC", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    font-size: 1em;
+        background-image: url('./susuki.png') !important;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: rgba(255 255 255 / 70%) !important;
+        background-blend-mode: overlay;
+
+    .box {
+        text-align: left;
+        padding: 0.3em;
+    }
+
+    h1 {
+        font-size: 2em;
+        text-align: center;
+    }
+}
+
+/* 通信 */
+
+/* 清水寺 */
+
+/* 蓮乗院 */
+
+/* 霊山寺 */
+
+@media print {
+    @page {
+        size: A4 landscape; /* 印刷時のサイズを A4 横 に */
+        margin: 0;          /* 印刷時のヘッダーとフッターを強制削除 */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        gap: 5mm;
+        column-gap: 20px;
+    }
+
+    .item {
+        width: calc(33.33% - 18px); /* 3列になるように調整 */
+        height: 205mm;
+        box-sizing: border-box;
+    }
+
+    /* 言葉 */
+    .kotoba {
+        h1 {
+            font-size: 1.6em;
+        }
+    }
+}

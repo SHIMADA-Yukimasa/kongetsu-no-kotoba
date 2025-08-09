@@ -1,0 +1,85 @@
+<html>
+  <body>
+    <div class="button" onclick="selectShort()">短文</div>
+    <div class="button" onclick="selectLong()">長文</div>
+    <div id="soto"></div>
+  </body>
+  <script>
+  const shortText = "お寿司食べたい?";
+  const longText = "私が好きなお寿司のネタとして、サーモン、本マグロ、はまちが挙げられます。いずれにしても脂がのっていてとても気に入っています。そういえばお寿司屋さんといえば弊社から歩いても行けるところに、私がよく行くお店があるのですが、1000円以下から食べられる「回らないお寿司」でとてもおいしいです。私一人でも、同僚とのランチでも行きます。";
+  const textElem = document.getElementById("soto");
+
+  function selectShort() {
+    textElem.innerText = shortText;
+    resize();
+  }
+
+  function selectLong() {
+    textElem.innerText = longText;
+    resize();
+  }
+
+  function resize() {
+    /* 文字数が少なくなったときのため、フォントサイズを戻せるようにします。
+    他にstyleの属性があればfont-sizeに関するところを除いてstyleに上書きしましょう。
+    今回はないのでstyle属性ごと削除します。*/
+    textElem.removeAttribute('style');
+    console.log(textElem.getBoundingClientRect().height , textElem.scrollHeight);
+    for (
+      let size = 30;
+      textElem.getBoundingClientRect().height　< textElem.scrollHeight && size > 10;
+      size -= 3
+      /* 文字がはみ出すサイズが存在していたので、1ずつ減らすのを3ずつ減らすという少し速いペースでフォントサイズを小さくしてみました。
+      こちらには正解不正解はなく、場合によって調整して遊んでみてください。*/
+    ) {
+      textElem.style.fontSize = size + "px";
+      // textElem.setAttribute("style", `font-size: ${size}px`); // こちらも可能
+    }
+  }
+
+  //ブラウザを開いたとき
+  selectShort();
+
+  //ウインドウサイズを変えたとき
+  window.addEventListener('resize', () => {
+    resize();
+  });
+
+  </script>
+  <style>
+  .button {
+    width: 100px;
+    margin: 8px;
+    padding: 8px;
+    font-size: 24px;
+    background-color: #ff8900;
+  }
+
+  #soto {
+    width: 90%;
+    height: 216px;
+    font-size: 30px;
+    border: 3px solid #ff8900;
+    padding:8px;
+
+    /*
+    1行で省略するとき
+    */
+    /*
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    */
+
+    /*
+    複数行で省略する時　
+    */
+    /*
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    */
+  }
+  </style>
+</html>
