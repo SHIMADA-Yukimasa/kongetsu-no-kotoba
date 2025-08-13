@@ -38,6 +38,7 @@ body {
         background-repeat: no-repeat;
         background-color: rgba(255 255 255 / 70%) !important;
         background-blend-mode: overlay;
+
     .box {
         text-align: center;
         padding: 0.6em;
@@ -51,6 +52,7 @@ body {
         font-size: small;
         text-align: center;
     }
+    
 }
 
 /* 教え */
@@ -63,9 +65,12 @@ body {
         background-color: rgba(255 255 255 / 70%) !important;
         background-blend-mode: overlay;
 
-    .box {
+    .txt {
+        max-width: 700px;
         text-align: left;
+        font-size: 1em;
         padding: 0.3em;
+        margin: 0 auto;
     }
 
     h1 {
@@ -75,6 +80,49 @@ body {
 }
 
 /* 通信 */
+#gyouji {
+    img {
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    #title {
+       font-size: 2em; 
+       text-align: center;
+       padding: 0.6em;
+    }
+
+    div {
+        font-size:2em;
+        text-align: center;
+        padding: 0.3em;
+    }
+    table {
+        width: 250px;
+        margin: 0 auto;
+    }
+    table th {
+        font-size: 2.0em;
+        color: white;
+        background-color: #114b63;
+        text-align: center;
+        padding: 0.2em;
+    }
+    table td {
+        font-size: 1.6em;
+        border: none;
+        background: #5EB2C5;
+        text-align: center;
+}
+
+    .box {
+        background-color: #114b63;
+        color: white;
+
+
+    }
+
+}
 
 /* 清水寺 */
 
@@ -90,14 +138,14 @@ body {
 
     .container {
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
         flex-wrap: wrap;
         gap: 5mm;
         column-gap: 20px;
     }
 
     .item {
-        width: calc(33.33% - 18px); /* 3列になるように調整 */
+        width: calc(33.33% - 18px);
         height: 205mm;
         box-sizing: border-box;
     }
@@ -107,5 +155,13 @@ body {
         h1 {
             font-size: 1.6em;
         }
+        .txt {
+            font-size: small;
+        }
+    }
+
+    /* 通信 */
+    img {
+        width: 77mm;
     }
 }
