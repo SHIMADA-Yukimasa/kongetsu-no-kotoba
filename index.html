@@ -3,28 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="widtd=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" media="all" href="styles.css">
+    <script type="module" src="./kotoba.js"></script>
+    <script type="module" src="./main.js"></script>
     <title>今月の言葉</title>
 </head>
 
 <body>
     <div class="container">
         <div class="item" id="kotoba">
-            <h1><u>○月の言葉</u></h1>
+            <h1><u id="month" ></u></h1>
             <div class="box">
-                <div class="tate">深い学識あり、技術を身につけ<br>身をつつしむことをよく学び<br>ことばがみごとであること<br>——これがこよなき幸せである</div>
+                <div class="tate" id="proverb"></div>
             </div>
             <br>
-            <div class="ss">中村元訳『ブッダの言葉』</div>
+            <div class="citation"></div>
         </div>
 
         <div class="item" id="oshie">
             <h1><u>御仏の教え</u></h1>
             <div class="box">
-                <div class="txt">そのころわたくしは、モリーオ市の博物局に勤めて居りました。<br>
-                    十八等官でしたから役所のなかでも、ずうっと下の方でしたし俸給ほうきゅうもほんのわずかでしたが、受持ちが標本の採集や整理で生れ付き好きなことでしたから、わたくしは毎日ずいぶん愉快にはたらきました。殊にそのころ、モリーオ市では競馬場を植物園に拵こしらえ直すというので、その景色のいいまわりにアカシヤを植え込んだ広い地面が、切符売場や信号所の建物のついたまま、わたくしどもの役所の方へまわって来たものですから、わたくしはすぐ宿直という名前で月賦で買った小さな蓄音器と二十枚ばかりのレコードをもって、その番小屋にひとり住むことになりました。わたくしはそこの馬を置く場所に板で小さなしきいをつけて一疋の山羊を飼いました。毎朝その乳をしぼってつめたいパンをひたしてたべ、それから黒い革のかばんへすこしの書類や雑誌を入れ、靴もきれいにみがき、並木のポプラの影法師を大股にわたって市の役所へ出て行くのでした。<br>
-                </div>
+                <div class="txt" id="explanation"></div>
             </div>
         </div>
         <div class="item" id="gyouji">
@@ -83,9 +83,22 @@
 
         <div class="item" id="renjyouin">
             <div class="title">蓮乗院からの<br>お知らせ</div>
-            <div class="renbox">
+            <div class="rencontainer">
                 <div class="renitem">
-                    <div class="tate">清水寺稲荷社ご案内</div>
+                    <div class="tate" id="renannai">清水寺稲荷社ご案内</div>
+                </div>
+                <div class="renitem">
+                    <div id="image">
+                    <img src="torii2_kasuga.png" alt="鳥居のイラスト">
+                    </div>
+                <div class="tate" id="ennichi">
+                    <span class="num">11</span>日は稲荷社ご縁日です<br>法要 午前<span class="num">10</span>時～
+                </div>
+                </div>
+                <div class="renitem">
+                    <div class="tate" id="toiawase">
+                        お問い合わせは清水寺本堂<br>祈祷受付までお越しください。
+                    </div>
                 </div>
             </div>
         </div>
